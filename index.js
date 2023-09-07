@@ -23,7 +23,7 @@ app.get('/api', (req, res) => {
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const date = new Date();
     const currentDay = daysOfWeek[date.getDay()];
-    const current_time = date.getTime();
+    const current_time = date.toISOString();
 
     res.json({
         "slack_name": slackname,
@@ -31,7 +31,7 @@ app.get('/api', (req, res) => {
         "utc_time": current_time,
         "track": track,
         "github_file_url": github_file_url,
-        "github_repo": github_repo,
+        "github_repo_url": github_repo,
         "status_code": 200
     });
 });

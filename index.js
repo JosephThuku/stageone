@@ -23,7 +23,7 @@ app.get('/api', (req, res) => {
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const date = new Date();
     const currentDay = daysOfWeek[date.getDay()];
-    const current_time = date.toISOString().replace(/\.\d+/, '') + "Z";
+    const current_time = date.toISOString().replace(/\.\d+/, '');
     res.json({
         "slack_name": slackname,
         "current_day": currentDay,
